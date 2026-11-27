@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turkey Run — The Great Thanksgiving Escape</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A6%83%3C/text%3E%3C/svg%3E">
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #2b1d12; }
+  #game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .menu-button {
+    position: fixed; left: 50%; transform: translateX(-50%);
+    font: 700 20px "Trebuchet MS", "Segoe UI", sans-serif;
+    color: #3a2408; background: #ffd94d; border: 3px solid #6b4423;
+    border-radius: 12px; padding: 12px 28px; cursor: pointer;
+    box-shadow: 0 4px 0 #6b4423;
+  }
+  .menu-button:hover { background: #ffe27a; }
+  .menu-button:active { transform: translateX(-50%) translateY(3px); box-shadow: 0 1px 0 #6b4423; }
+  #start-button { bottom: 6%; }
+  #restart-button { bottom: 6%; }
+</style>
+</head>
+<body>
+<canvas id="game" aria-label="Turkey Run: a turkey escapes the farmer before Thanksgiving. Jump with Space, slide with the Down arrow."></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<button id="start-button" class="menu-button" type="button">▶ Run for your life!</button>
+<button id="restart-button" class="menu-button" type="button" hidden>↻ Run again</button>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
